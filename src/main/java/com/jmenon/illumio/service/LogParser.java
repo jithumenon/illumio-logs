@@ -60,11 +60,11 @@ public class LogParser {
     public String getTagCountsAsTable() {
         final StringBuilder sb = new StringBuilder();
         sb.append("Tag Counts:\n");
-        sb.append("Tag\t Count\n");
+        sb.append("Tag\t\t Count\n");
         TAG_COUNTS.keySet()
                 .stream()
                 .sorted()
-                .forEach(tag -> sb.append(tag).append("\t").append(TAG_COUNTS.get(tag)).append("\n"));
+                .forEach(tag -> sb.append(tag).append("\t\t").append(TAG_COUNTS.get(tag)).append("\n"));
         return sb.toString();
     }
 
@@ -79,7 +79,7 @@ public class LogParser {
                     final String[] portAndProtocol = combinedKey.split(LookupTable.KEY_DELIMITER);
                     final String port = portAndProtocol[0];
                     final String protocol = portAndProtocol[1];
-                    sb.append(port).append("\t").append(protocol).append("\t").append(PORT_AND_PROTOCOL_COUNTS.get(combinedKey)).append("\n");
+                    sb.append(port).append("\t").append(protocol).append("\t\t").append(PORT_AND_PROTOCOL_COUNTS.get(combinedKey)).append("\n");
                 });
         return sb.toString();
     }
